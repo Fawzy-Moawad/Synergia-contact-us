@@ -40,7 +40,7 @@ app.post('/send', (req, res) => {
     // Email options
     const mailOptions = {
         from: process.env.EMAIL, // Your email address from .env
-        to: 'volunteers@fun-canada.com', // Change this to your desired recipient
+        to: 'Support@synergiasolutions.ca', // Change this to your desired recipient
         subject: 'Contact Us Form',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
