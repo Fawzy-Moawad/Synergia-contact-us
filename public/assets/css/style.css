@@ -55,6 +55,13 @@ h6 {
   color: #fafafa;
 }
 
+.fixed-button {
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+}
+
+
 /*Section Background Color Change*/
 .color-change {
   background-color: #fff;
