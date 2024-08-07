@@ -24,25 +24,25 @@ app.use((req, res, next) => {
 
 // Route to handle form submission
 app.post('/send', (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, email, subject, message } = req.body;
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
-        host: 'smtp.hostinger.com',
-        port: 587,
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: process.env.EMAIL, // Your email address
-            pass: process.env.PASSWORD // Your email password
+            user: process.env.EMAIL, // Your Hostinger email address
+            pass: process.env.PASSWORD // Your Hostinger email password
         }
     });
 
     // Email options
     const mailOptions = {
         from: process.env.EMAIL, // Your email address from .env
-        to: 'info@synergiasolutions.ca', // Change this to your desired recipient
-        subject: 'Contact Us Form',
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+        to: 'info@synergiasolutions.ca',
+        subject: 'Contact Form',
+        text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`
     };
 
     // Send email
