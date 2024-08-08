@@ -43,10 +43,10 @@
 
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#hero">Home</a></li>
               <li><a class="nav-link scrollto" href="#about">About</a></li>
               <li><a class="nav-link scrollto" href="#services">Services</a></li>
-              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+              <li><a class="nav-link scrollto active" href="#contact">Contact</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
@@ -78,38 +78,39 @@
         </header>
 
         <!--Contact-container-->
-        <div class="contact-container pt-3">
+        <form id="contactForm" action="/send" method="POST">
           <div class="row d-flex align-items-center justify-content-center">
             <div class="col-lg-6">
               <div class="row servives-card me-5">
                 <label for="name">Name</label>
-                <input type="text" id="" class="form-control" placeholder="Your Name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
               </div>
             </div>
-
+        
             <div class="col-lg-6">
               <div class="row servives-card">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" id="email" name="email" class="form-control" placeholder="Your Email">
               </div>
             </div>
           </div>
-
+        
           <div class="row d-flex align-items-center justify-content-center">
             <div class="col-lg-12">
               <div class="row servives-card">
-                <label for="Message">Message</label>
-                <textarea name="message" id="" class="form-control" placeholder="Tell us how we can help your business"></textarea>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" class="form-control" placeholder="Tell us how we can help your business"></textarea>
               </div>
             </div>
           </div>
-
+        
           <div class="row pt-4 pb-4">
             <div class="col-lg-12 d-flex justify-content-end">
-              <a href="#" class="btn my-button me-2 fixed-button">Send</a>
+              <button type="submit" class="btn my-button me-2 fixed-button">Send</button>
             </div>
           </div>
-        </div>
+        </form>
+        
         <!--/Contact-container-->
 
         <div class="row color-change border p-3 rounded">

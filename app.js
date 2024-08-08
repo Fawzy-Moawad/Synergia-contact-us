@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 // Route to handle form submission
 app.post('/send', (req, res) => {
-    const { name, email, subject, message } = req.body;
+    const { name, email, message } = req.body;
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
@@ -42,7 +42,7 @@ app.post('/send', (req, res) => {
         from: process.env.EMAIL, // Your email address from .env
         to: 'info@synergiasolutions.ca',
         subject: 'Contact Form',
-        text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
     // Send email
